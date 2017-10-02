@@ -50,7 +50,7 @@ sudo Rscript -e 'source("https://bioconductor.org/biocLite.R");biocLite("rhdf5")
 
 #### Install rvislib
 cd $program_dir
-git clone https://@bitbucket.org/glyvis/rvislib.git
+git clone https://glyvis@bitbucket.org/glyvis/rvislib.git
 cd rvislib
 sudo Rscript -e "devtools::install('.')"
 
@@ -63,7 +63,7 @@ disown
 
 #### Install rglyvis
 cd $program_dir
-git clone https://@bitbucket.org/glyvis/rglyvis.git
+git clone https://glyvis@bitbucket.org/glyvis/rglyvis.git
 cd rglyvis
 git checkout useRedis
 ##### Replace the data path
@@ -76,5 +76,5 @@ sudo service opencpu restart
 
 #### Install web-app to /var/www/html
 cd $program_dir
-git clone https://@bitbucket.org/glyvis/glyvis-app.git
+git clone https://glyvis@bitbucket.org/glyvis/glyvis-app.git
 sudo mv glyvis-app /var/www/html/
