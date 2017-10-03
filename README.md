@@ -75,7 +75,7 @@ sudo make install
 ### Developer tools
 
 ```bash
-cd
+sudo apt-get install git
 sudo Rscript -e "install.packages(c('futile.logger','testthat', 'roxygen2'), repos='https://cran.cnr.berkeley.edu/',Ncpus=2)"
 sudo Rscript -e "devtools::install_version('devtools', version='1.11.1', repos='https://cran.cnr.berkeley.edu/',Ncpus=2,quiet=TRUE)"
 ```
