@@ -44,6 +44,7 @@ sudo make install
 cd
 sudo Rscript -e "install.packages(c('futile.logger','testthat', 'roxygen2'), repos='https://cran.cnr.berkeley.edu/',Ncpus=2)"
 sudo Rscript -e "devtools::install_version('devtools', version='1.11.1', repos='https://cran.cnr.berkeley.edu/',Ncpus=2,quiet=TRUE)"
+sudo apt-get install git
 
 #### Install bioconductor dependencies
 sudo Rscript -e 'source("https://bioconductor.org/biocLite.R");biocLite("rhdf5");'
