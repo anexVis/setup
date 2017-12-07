@@ -127,10 +127,11 @@ Restart OpenCPU
 sudo service opencpu restart
 ```
 
-### Install anex-app
+### Install anexVis-app
 
 ```bash
 cd $program_dir
 git clone https://anexvis@bitbucket.org/anexvis/anexvis-app.git
 sudo mv anexvis-app /var/www/html/
 ```
+The app is accessible at http://url-to-your-apache-server/anexvis-app
