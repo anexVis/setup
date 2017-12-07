@@ -105,7 +105,7 @@ disown
 As `rglyvis` depends on all the components above, make sure OpenCPU and redis-server are started, and your data file is in place.
 ```bash
 cd $program_dir
-git clone https://glyvis@bitbucket.org/glyvis/rglyvis.git
+git clone https://anexvis@bitbucket.org/anexvis/rglyvis.git
 cd rglyvis
 git checkout useRedis
 ```
@@ -127,10 +127,10 @@ Restart OpenCPU
 sudo service opencpu restart
 ```
 
-### Install glyvis-app
+### Install anex-app
 
 ```bash
 cd $program_dir
-git clone https://glyvis@bitbucket.org/glyvis/glyvis-app.git
-sudo mv glyvis-app /var/www/html/
+git clone https://anexvis@bitbucket.org/anexvis/anexvis-app.git
+sudo mv anexvis-app /var/www/html/
 ```
