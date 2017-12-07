@@ -1,4 +1,8 @@
-This repo provides an installation script example that can be used to set up your own instance of glyvis web application.
+If you want to use anexVis, a web service is provided at https://anexvis.chpc.utah.edu
+
+If you want to provide your own host, contribute to the code, or adopt it for your research, it is good to set up the server on the recommended OS which is Ubuntu 16.04 or higher.
+
+This repo provides an installation script example that can be used to set up your own instance of anexVis web application. 
 The application involves several components that need to be stitched together. In principle, the server components can be implemented separately.
 The example below only shows how to implement them in one single machine.
 
