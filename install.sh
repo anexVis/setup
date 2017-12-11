@@ -51,7 +51,7 @@ sudo Rscript -e 'source("https://bioconductor.org/biocLite.R");biocLite("rhdf5")
 
 #### Install rvislib
 cd $program_dir
-git clone https://glyvis@bitbucket.org/glyvis/rvislib.git
+git clone https://github.com/anexVis/rvislib.git
 cd rvislib
 sudo Rscript -e "devtools::install('.')"
 
@@ -62,20 +62,20 @@ sudo Rscript -e 'devtools::install_github("bwlewis/rredis"); devtools::install_d
 redis-server &
 disown
 
-#### Install rglyvis
+#### Install ranexvis
 cd $program_dir
-git clone https://glyvis@bitbucket.org/glyvis/rglyvis.git
-cd rglyvis
-git checkout useRedis
+git clone https://github.com/anexVis/ranexvis.git
+
 ##### Replace the data path
 Rscript -e `printf 'load("data/sysdata.rda");dbpath=list(gtex="%s");save(list=ls(),file="data/sysdata.rda")' $DATAPATH`
 sudo Rscript -e "devtools::install('.', quick=TRUE, force_deps=FALSE, upgrade_dependencies=FALSE)"
 
-##### Add rglyvis to list of preload packages in /etc/opencpu/server.conf
-sudo sed -i '/preload/ c\    "preload": ["rglyvis", "ggplot2"]' /etc/opencpu/server.conf
+##### Add ranexvis to list of preload packages in /etc/opencpu/server.conf
+sudo sed -i '/preload/ c\    "preload": ["ranexvis", "ggplot2"]' /etc/opencpu/server.conf
 sudo service opencpu restart
+
 
 #### Install web-app to /var/www/html
 cd $program_dir
-git clone https://glyvis@bitbucket.org/glyvis/glyvis-app.git
-sudo mv glyvis-app /var/www/html/
+git clone https://github.com/anexVis/anexvis-app.git
+sudo mv anexvis-app /var/www/html/
