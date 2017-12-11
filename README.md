@@ -88,10 +88,10 @@ sudo Rscript -e "devtools::install_version('devtools', version='1.11.1', repos='
 ```bash
 sudo Rscript -e 'source("https://bioconductor.org/biocLite.R");biocLite("rhdf5");'
 ```
-### rvislib - a dependency of rglyvis
+### rvislib - a dependency of ranexvis
 ```bash
 cd $program_dir
-git clone https://glyvis@bitbucket.org/glyvis/rvislib.git
+git clone https://github.com/anexVis/rvislib.git
 cd rvislib
 sudo Rscript -e "devtools::install('.')"
 ```
@@ -105,13 +105,11 @@ disown
 ```
 
 
-### rglyvis
-As `rglyvis` depends on all the components above, make sure OpenCPU and redis-server are started, and your data file is in place.
+### ranexvis
+As `ranexvis` depends on all the components above, make sure OpenCPU and redis-server are started, and your data file is in place.
 ```bash
 cd $program_dir
-git clone https://anexvis@bitbucket.org/anexvis/rglyvis.git
-cd rglyvis
-git checkout useRedis
+git clone https://github.com/anexVis/ranexvis.git
 ```
 
 Replace the custom data path and install the package
@@ -121,21 +119,21 @@ Rscript -e `printf 'load("data/sysdata.rda");dbpath=list(gtex="%s");save(list=ls
 sudo Rscript -e "devtools::install('.', quick=TRUE, force_deps=FALSE, upgrade_dependencies=FALSE)"
 ```
 
-Add `rglyvis` to the list of packages to pre-load by OpenCPU server. You can also do this manually by modifying the line `preload` in `/etc/opencpu/server.conf`
+Add `ranexvis` to the list of packages to pre-load by OpenCPU server. You can also do this manually by modifying the line `preload` in `/etc/opencpu/server.conf`
 
 ```bash
-sudo sed -i '/preload/ c\    "preload": ["rglyvis", "ggplot2"]' /etc/opencpu/server.conf
+sudo sed -i '/preload/ c\    "preload": ["ranexvis", "ggplot2"]' /etc/opencpu/server.conf
 ```
 Restart OpenCPU
 ```bash
 sudo service opencpu restart
 ```
 
-### Install anexVis-app
+### Install anexvis-app
 
 ```bash
 cd $program_dir
-git clone https://anexvis@bitbucket.org/anexvis/anexvis-app.git
+git clone https://github.com/anexVis/anexvis-app.git
 sudo mv anexvis-app /var/www/html/
 ```
 The app is accessible at http://url-to-your-apache-server/anexvis-app
