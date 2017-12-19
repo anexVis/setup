@@ -129,6 +129,8 @@ Restart OpenCPU
 sudo service opencpu restart
 ```
 
+From the time OpenCPU server is up, it generally takes about 30 seconds to finish loading the whole data set. Until then, the gene list and other inputs won't be available.
+
 ### Install anexvis-app
 
 ```bash
