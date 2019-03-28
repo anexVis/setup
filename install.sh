@@ -34,11 +34,14 @@ curl http://localhost/ocpu/info
  
 #### Install Redis server
 cd $program_dir
-wget http://download.redis.io/releases/redis-3.2.8.tar.gz
-tar -xzf  redis-3.2.8.tar.gz
-cd redis-3.2.8/
+# wget http://download.redis.io/releases/redis-3.2.8.tar.gz
+wget http://download.redis.io/releases/redis-5.0.4.tar.gz
+tar -xzf  redis-5.0.4.tar.gz
+cd redis-5.0.4/
 make
 sudo make install
+redis-server &
+disown
 
 #### [Optional] Developer tools
 cd
@@ -54,13 +57,6 @@ cd $program_dir
 git clone https://github.com/anexVis/rvislib.git
 cd rvislib
 sudo Rscript -e "devtools::install('.')"
-
-#### Install rredis from github, since CRAN version has unfixed bug
-sudo Rscript -e 'devtools::install_github("bwlewis/rredis"); devtools::install_dev_deps(".")'
-
-#### Start redis-server
-redis-server &
-disown
 
 #### Install ranexvis
 cd $program_dir
